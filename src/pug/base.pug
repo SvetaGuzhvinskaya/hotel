@@ -1,0 +1,66 @@
+include mixins/svg
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Hotel Stavropol
+    link(rel="shortcut icon" href="images/favicon.ico")
+    link(rel="stylesheet", href="css/style.min.css")
+    link(rel="preload" href="fonts/p052-bold.woff2" as="font")
+    link(rel="preload" href="fonts/roboto-regular.woff2" as="font")
+    link(rel="preload" href="fonts/lato-regular.woff2" as="font")
+  body
+    - var mainMenu = [{text: 'Расчёт стоимости', link: '#section-cost'}, {text: 'О нас', link: '#'}, {text: 'Выездная регистрация', link: '#'}, {text: 'Схемы залов', link: '#section-hall'}, {text: 'Меню', link: '#'}, {text: 'Галерея', link: '#'}, {text: 'Отзывы', link: '#s'}, {text: 'Контакты', link: '#'}]
+    header.header
+      .container
+        .header__grid
+          .btn-menu.visib-sm.js-btn-menu
+            span.btn-menu__line
+          .logo
+            a.logo__link.logo__link--sm(href="#")
+              img.logo__img(src="images/logo.svg", alt="Hotel Stavropol")
+          .address-head.hidden-xs г. Ставрополь,
+            br
+            | ул. Пушкина 272
+          .share-head.hidden-xs
+            ul.share-head__list
+              li.share-head__item
+                a.share-head__link(href="#")
+                  +svg("icon-telegram", "share-head__icon")
+              li.share-head__item
+                a.share-head__link(href="#")
+                  +svg("icon-whatsapp", "share-head__icon")
+          .contact-head
+            .contact-head__phone +7 (123) 45-67-89
+            a.link.hidden-xs.js-modal(href="#" data-modal="#modal-call") Перезвоните мне
+            button.btn.btn--sm.visib-xs.js-modal(data-modal="#modal-call") Позвонить
+        nav.nav
+          ul.nav__list
+            each item in mainMenu
+              li.nav__item
+                a.nav__link(href="" +item.link)=item.text
+
+    block content
+    footer.footer
+      .container
+        .footer__grid
+          .logo
+            a.logo__link(href="#")
+              img.logo__img(src="images/logo-foot.svg", alt="Hotel Stavropol")
+          .share-foot
+            h3.share-foot__title Мы в соц. сетях
+            ul.share-foot__list
+              li.share-foot__item
+                a.share-foot__link(href="#")
+                  +svg("icon-facebook", "share-foot__icon share-foot__icon--facebook")
+              li.share-foot__item
+                a.share-foot__link(href="#")
+                  +svg("icon-whatsapp", "share-foot__icon")
+              li.share-foot__item
+                a.share-foot__link(href="#")
+                  +svg("icon-vk", "share-foot__icon")
+        p.footer__txt &copy; Hotel Stavropol, 2020
+
+    script(src="js/app.js")

@@ -1,0 +1,162 @@
+@at-root {
+  :root {
+    --swiper-pagination-bottom: 23px;
+    --swiper-pagination-bullet-horizontal-gap: 8px;
+    --swiper-pagination-bullet-width: 14px;
+    --swiper-pagination-bullet-height: 14px;
+    --swiper-theme-color: #{$color-black};
+    --swiper-pagination-bullet-inactive-opacity: .3;
+    --swiper-navigation-sides-offset: 0;
+    --swiper-navigation-top-offset: 0;
+    --swiper-navigation-size: 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  &.with-fancybox {
+    margin-right: 17px;
+    overflow: hidden;
+  }
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: $font-family-lato;
+  font-size: 16px;
+  line-height: 28px;
+  color: $color-grey42;
+
+  &.menu-is-open,
+  &.compensate-for-scrollbar {
+    overflow: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.icon {
+  display: block;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 1648px;
+}
+
+.center {
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 19px;
+  font-family: $font-family-p052;
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 48px;
+  color: $color-black;
+}
+
+.logo {
+  &__link {
+    display: block;
+    width: 109px;
+  }
+  &__img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.link {
+  font-family: $font-family-roboto;
+  font-size: 15px;
+  line-height: 20px;
+  color: $color-gold;
+  text-decoration: underline;
+  @include transition;
+  &:focus {
+    color: $color-grey42;
+  }
+  &:hover {
+    color: $color-gold;
+    text-decoration: none;
+  }
+  &:active {
+    color: $color-grey63;
+  }
+}
+
+@media (max-width: $sm) {
+  .container {
+    padding-left: $padding-sm;
+    padding-right: $padding-sm;
+  }
+}
+
+@media (max-width: $xs) {
+  .container {
+    padding-left: $padding-xs;
+    padding-right: $padding-xs;
+  }
+}
+
+@media (max-width: $xxs) {
+  .container {
+    padding-left: $padding-xxs;
+    padding-right: $padding-xxs;
+  }
+
+  .title {
+    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .logo {
+    &__link {
+      &--sm {
+        width: 79px;
+      }
+    }
+  }
+}

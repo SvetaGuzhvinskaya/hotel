@@ -1,0 +1,257 @@
+.header {
+  background: $color-white;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid $color-greyF7;
+  &__grid {
+    @include grid(1fr 236px 104px 164px, auto, start, 48px);
+    padding: 12px 0 15px;
+  }
+}
+
+.address-head {
+  position: relative;
+  padding: 0 0 0 36px;
+  background: 0 center url('../images/icon-address.svg') no-repeat;
+  background-size: 16px 20px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.share-head {
+  &__list {
+    display: flex;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: $color-gold;
+    border-radius: 4px;
+    overflow: hidden;
+    @include transition;
+    &:focus {
+      background-color: $color-grey63;
+    }
+    &:hover {
+      opacity: .8;
+    }
+    &:active {
+      background-color: $color-greyAC;
+    }
+  }
+  &__icon {
+    width: 20px;
+    fill: $color-white;
+  }
+}
+
+.contact-head {
+  padding: 1px 0 0;
+  text-align: right;
+  &__phone {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+.nav {
+  font-size: 16px;
+  line-height: 28px;
+  &__list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 3.8%;
+    }
+  }
+  &__link {
+    position: relative;
+    display: block;
+    padding: 16px 16px 15px;
+    color: $color-black;
+    text-decoration: none;
+    @include transition;
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $color-gold;
+      content: '';
+      transform: translate(-50%, 0);
+      @include transition;
+    }
+    &:hover,
+    &:focus,
+    &:active,
+    &.is-active {
+      color: $color-gold;
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .nav {
+    &__item {
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .header {
+    border-radius: 0;
+    &__grid {
+      grid-template-columns: 24px 1fr 190px 104px 164px;
+      align-items: center;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+  }
+
+  .btn-menu {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 11;
+
+    &__line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      height: 2px;
+      background-color: $color-gold;
+      transform: translate(-50%, -50%);
+      @include transition;
+
+      &:before,
+      &:after {
+        position: absolute;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $color-gold;
+        @include transition;
+        content: '';
+      }
+
+      &:before {
+        top: 5px;
+      }
+
+      &:after {
+        bottom: 5px;
+      }
+    }
+
+    &.is-open {
+      .btn-menu__line {
+        background-color: transparent;
+
+        &:before {
+          top: 0;
+          transform: rotate(-45deg);
+        }
+
+        &:after {
+          top: 0;
+          bottom: auto;
+          transform: rotate(45deg);
+        }
+      }
+
+    }
+  }
+
+  .nav {
+    position: absolute;
+    top: 0;
+    left: -450px;
+    padding: 100px $padding-sm;
+    width: 320px;
+    min-height: 100vh;
+    background-color: $color-greyF7;
+    z-index: 10;
+    @include transition;
+    &__list {
+      display: block;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+    &__link {
+      display: inline-block;
+      padding: 10px 0;
+      &:after {
+        left: 0;
+        transform: translate(0, 0);
+      }
+    }
+    &--is-open {
+      left: 0;
+      display: block;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .header {
+    &__grid {
+      grid-template-columns: 24px 1fr 109px;
+      grid-gap: $padding-xs;
+    }
+  }
+
+  .contact-head {
+    &__phone {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $xxs) {
+  .header {
+    &__grid {
+      grid-gap: $padding-xxs;
+    }
+  }
+
+  .nav {
+    padding-top: 66px;
+    padding-left: $padding-xxs;
+    padding-right: $padding-xxs;
+    &__link {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+@media (max-width: $xxxs) {
+  .nav {
+    width: 100%;
+  }
+}

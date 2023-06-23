@@ -1,0 +1,70 @@
+.footer {
+  padding: 46px 0 12px;
+  background-color: $color-grey42;
+  border-radius: 20px 20px 0 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-white;
+  &__grid {
+    @include grid(1fr auto, auto, center, 48px);
+    padding-bottom: 43px;
+  }
+  &__txt {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.share-foot {
+  &__title {
+    margin: 0 0 16px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 24px;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: $color-greyAC;
+    border-radius: 16px;
+    overflow: hidden;
+    @include transition;
+    &:focus {
+      background-color: $color-grey63;
+    }
+    &:hover {
+      opacity: .8;
+    }
+    &:active {
+      background-color: $color-greyAC;
+    }
+  }
+  &__icon {
+    width: 20px;
+    fill: $color-white;
+    &--facebook {
+      width: 10px;
+    }
+  }
+}
+
+@media (max-width: $xxs) {
+  .footer {
+    padding: 40px 20px 20px;
+    &__grid {
+      @include grid(1fr, auto, center, 40px);
+      padding-bottom: 60px;
+    }
+  }
+}

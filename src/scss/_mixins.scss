@@ -1,0 +1,38 @@
+@mixin arrow($direction, $width, $height) {
+  display: inline-block;
+  vertical-align: middle;
+  width: $width;
+  height: $height;
+  background: 0 0 url('../images/arrow.svg') no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  @if $direction == (to left) {
+    transform: rotate(-180deg);
+    margin-right: 18px;
+  }
+  @if $direction == (to right) {
+    margin-left: 18px;
+  }
+}
+
+@mixin transition {
+  transition: all .3s ease-out;
+}
+
+@mixin grid($columns, $rows, $align, $gap) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  grid-gap: $gap;
+  grid-auto-flow: dense;
+  align-items: $align;
+}
+
+@mixin flex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+

@@ -1,0 +1,171 @@
+
+extends pug/base
+
+block content
+  main.main
+    h1.hidden Hotel Stavropol
+    section#section-cost.section.section-cost
+      .container
+        h2.title Рассчитайте стоимость вашего банкета
+        p.section-cost__description.visib-xs Ответьте на 5 вопросов и получите горку из шампанского в подарок
+        .section-cost__grid
+          .question-form
+            .question-form__progress
+              .question-form__progress-txt Вопрос&nbsp;
+                span#fraction
+              .question-form__progress-bar.js-swiper-progressbar
+            .swiper.js-question-slider
+              .swiper-wrapper
+                .swiper-slide
+                  h3.question-form__title Количество гостей
+                  .question-form__control-row
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="number-guests" id="number-guests1" value="5-30" checked="checked")
+                      label.radio__label(for="number-guests1")
+                        span.radio__icon
+                        | 5-30
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="number-guests" id="number-guests2" value="30-60")
+                      label.radio__label(for="number-guests2")
+                        span.radio__icon
+                        | 30-60
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="number-guests" id="number-guests3" value="60-80")
+                      label.radio__label(for="number-guests3")
+                        span.radio__icon
+                        | 60-80
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="number-guests" id="number-guests4" value="80-100")
+                      label.radio__label(for="number-guests4")
+                        span.radio__icon
+                        | 80-100
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="number-guests" id="number-guests5" value="100-120")
+                      label.radio__label(for="number-guests5")
+                        span.radio__icon
+                        | 100-120
+                .swiper-slide
+                  h3.question-form__title Музыкально сопровождение
+                  .question-form__control-row
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="music" id="music-dj" value="dj")
+                      label.radio__label(for="music-dj")
+                        span.radio__icon
+                        | Dj
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="music" id="music-toaster" value="toaster")
+                      label.radio__label(for="music-toaster")
+                        span.radio__icon
+                        | Тамада
+                .swiper-slide
+                  h3.question-form__title Наличие цветов
+                  .question-form__control-row
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="flower" id="flower1" value="yes")
+                      label.radio__label(for="flower1")
+                        span.radio__icon
+                        | Да
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="flower" id="flower2" value="no")
+                      label.radio__label(for="flower2")
+                        span.radio__icon
+                        | Нет
+                .swiper-slide
+                  h3.question-form__title Праздничный салют
+                  .question-form__control-row
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="firework" id="firework1" value="yes")
+                      label.radio__label(for="firework1")
+                        span.radio__icon
+                        | Да
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="firework" id="firework2" value="no")
+                      label.radio__label(for="firework2")
+                        span.radio__icon
+                        | Нет
+                .swiper-slide
+                  h3.question-form__title Количество свечей
+                  .question-form__control-row
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="number-candle" id="number-candle1" value="100-120")
+                      label.radio__label(for="number-candle1")
+                        span.radio__icon
+                        | 100-120
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="number-candle" id="number-candle2" value="120-200")
+                      label.radio__label(for="number-candle2")
+                        span.radio__icon
+                        | 120-200
+                    .radio.question-form__control-col
+                      input.radio__input(type="radio" name="number-candle" id="number-candle3" value="200-300")
+                      label.radio__label(for="number-candle3")
+                        span.radio__icon
+                        | 200-300
+            hr.question-form__border
+            button.btn.btn--arrow-left.swiper-button-prev Предыдущий вопрос
+            button.btn.btn--arrow-right.swiper-button-next Следующий вопрос
+          .banner-cost
+            p.banner-cost__description Ответьте на 5 вопросов и получите горку из шампанского в подарок
+            button.btn.btn--arrow-right.visib-xs Начать
+    section#section-hall.section.section-hall
+      .container
+        h2.title.section-hall__title Схемы залов
+        #tabs.tabs
+          .tabs__nav
+            h3.tabs__title.active-tab.js-tab-tit Зал Первый
+            h3.tabs__title.js-tab-tit Зал Второй
+          .tabs__content.js-tab-content
+            .tabs__content-grid
+              .hall-img
+                img.hall-img__img(src="images/img-tabs.jpg", alt="Зал Первый")
+              .hall-info
+                .hall-info__title Просторный зал с панорамным видом на город
+                .hall-info__list
+                  .hall-info__item
+                    .hall-info__item-tit площадь
+                    .hall-info__item-txt 160 кв. метров
+                  .hall-info__item
+                    .hall-info__item-tit вместимость
+                    .hall-info__item-txt до 100 человек
+                  .hall-info__item
+                    .hall-info__item-tit фуршет
+                    .hall-info__item-txt до 200 человек
+                button.btn.hall-info__btn Забронировать
+                button.btn.btn--outline.hall-info__btn Посмотреть галерею
+          .tabs__content.js-tab-content
+            .tabs__content-grid
+              .hall-img
+                img.hall-img__img(src="images/img-tabs2.jpg", alt="Зал Первый")
+              .hall-info
+                .hall-info__title Просторный зал с панорамным видом на город
+                .hall-info__list
+                  .hall-info__item
+                    .hall-info__item-tit площадь
+                    .hall-info__item-txt 160 кв. метров
+                  .hall-info__item
+                    .hall-info__item-tit вместимость
+                    .hall-info__item-txt до 100 человек
+                  .hall-info__item
+                    .hall-info__item-tit фуршет
+                    .hall-info__item-txt до 200 человек
+                button.btn.hall-info__btn Забронировать
+                button.btn.btn--outline.hall-info__btn Посмотреть галерею
+  #modal-call.modal
+    .modal__content
+      .btn-close.modal__btn-close.js-modal-close
+      .modal__grid
+        .modal__col
+          h3.modal__title Оставьте заявку
+          p.modal__descroption Скоро с вами свяжется администратор
+          .modal__foot Нажимая на кнопку «Отправить», Вы соглашаетесь с 
+            a(href="#") Политикой конфиденциальности
+        .modal__col
+          form#callForm
+            .form-control
+              label.label Ваше имя
+              input#nameInputCall.input(type="text" placeholder="Имя" name="name" required)
+            .form-control
+              label.label Ваш номер телефона
+              input#phoneInputCall.input.js-mask-phone(type="tel" placeholder="+7 (___) ___-__-__" name="phone" required)
+            button.btn Забронировать
+
