@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, this);
       if ($(window).width() < 1000) {
         document.querySelector(".nav").classList.toggle("nav--is-open");
+        document.querySelector(".js-btn-menu").classList.toggle("is-open")
         document.querySelector("body").classList.toggle("menu-is-open");
       }
     });
