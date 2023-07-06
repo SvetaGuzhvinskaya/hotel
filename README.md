@@ -15,8 +15,8 @@
 
 
 
-<h2>Сборка проекта</h2>
-<p>Для сборки используется <a hfef="https://github.com/gulpjs/gulp" target="_blank">Gulp</a></p>
+## Сборка проекта
+Для сборки используется [Gulp](https://github.com/gulpjs/gulp)
 <p>Перед началом работы необходимо установить зависимости из npm:</p>
 <pre>
   <code>npm i</code>
